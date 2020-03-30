@@ -3,7 +3,6 @@
   --color1: #020C1D;
   --color2: #2A3D92;
   --color3: #EB433D;
-  --color4: #D49C83;
 }
 
 /* generic page-wide setting */
@@ -200,7 +199,7 @@ img {
 }
 
 .project-tile:hover .code {
-  color: ; /* change "code" text to this color when hovering over tile */
+  color: #FF7034; /* change "code" text to this color when hovering over tile */
 }
 
 .project-image {
@@ -209,7 +208,7 @@ img {
   object-fit: cover; /* clip image to fit box */
 }
 
-.project-title {
+.project-name {
   font-size: 2rem;
   padding: 2rem 0.5rem;
   /* height of content = 2rem + 2rem + 2rem = 6rem. Then add 0.8rem for space, hence 6.8rem used in calculation of project image height*/
