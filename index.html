@@ -5,10 +5,11 @@
     <link rel="stylesheet" href="./css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="./css/master.css" type="text/css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400|Raleway:700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2e45d1f356.js" crossorigin="anonymous"></script>
     <title>Melvin Kok</title>
   </head>
   <body>
-    <nav id="navbar">
+    <nav id="navbar" class="navbar">
       <ul class="nav-list">
         <li><a href="#welcome-section">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -16,42 +17,52 @@
       </ul>
     </nav>
 
-    <div class="content">
-      <section id="welcome-section">
-        <h1>I am Melvin</h1>
-        <p></p>
-      </section>
+    <section id="welcome-section" class="welcome-section">
+      <h1>I am Melvin</h1>
+      <p>Software engineer to be??</p>
+    </section>
 
-      <section id="projects">
-        <h2>These are some of my projects</h2>
-        <a href="https://github.com/melvinkokxw/japan-athletes-kym" class="project-tile">
+    <section id="projects" class="projects-section">
+      <h2 class="projects-section-header">These are some of my projects</h2>
+
+      <div class="projects-grid">
+        <a href="https://github.com/melvinkokxw/japan-athletes-kym" class="project-tile" target="_blank">
           <img src="" alt="Screenshot of prediction program from Anaconda">
-          <p><span>Olympian medal win prediction</span></p>
+          <p><span class="code">&lt;</span> Olympian medal win prediction <span class="code">&#47;&gt;</span></p>
         </a>
 
-        <a href="https://github.com/melvinkokxw/basic-pages/tree/master/bp-tribute-page" class="project-tile">
+        <a href="https://github.com/melvinkokxw/basic-pages/tree/master/bp-tribute-page" class="project-tile" target="_blank">
           <img src="" alt="Screenshot of BP Tribute Page">
-          <p><span>Tribute Page</span></p>
+          <p><span class="code">&lt;</span> Tribute Page <span class="code">&#47;&gt;</span></p>
         </a>
 
-        <a href="https://github.com/melvinkokxw/number-guesser" class="project-tile">
+        <a href="https://github.com/melvinkokxw/number-guesser" class="project-tile" target="_blank">
           <img src="" alt="Screenshot of number guesser">
-          <p><span>Number Guesser</span></p>
+          <p><span class="code">&lt;</span> Number Guesser <span class="code">&#47;&gt;</span></p>
         </a>
-      </section>
+      </div>
 
-      <section id="contact">
+      <a href="https://codepen.io/FreeCodeCamp/" class="show-all-button" target="_blank">
+        Show all<span class="fas fa-chevron-right"></span>
+      </a>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-section-header">
         <h2>Let's work together</h2>
-        <a href="https://github.com/melvinkokxw" class="contact-tile" id="profile-link">
-          <img src="" alt="GitHub logo" class="logo">
-          <p><span>GitHub</span></p>
+        <p>How would you like to contact me?</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/melvinkokxw" target="_blank" class="contact-tile" id="profile-link">
+          <span class="fab fa-github"></span>GitHub
         </a>
-        <a href="#" class="contact-tile">
-          <img src="" alt="Email logo" class="logo">
-          <p><span>Send a mail</span></p>
+
+        <a href="#" target="_blank" class="contact-tile">
+          <span class="fas fa-at"></span>Send a mail
         </a>
-      </section>
-    </div>
+      </div>
+    </section>
 
   </body>
 </html>

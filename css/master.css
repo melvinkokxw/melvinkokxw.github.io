@@ -1,0 +1,291 @@
+/* setting color scheme for site */
+:root {
+  --color1: #020C1D;
+  --color2: #2A3D92;
+  --color3: #EB433D;
+  --color4: #D49C83;
+}
+
+/* generic page-wide setting */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box; /* setting box-sizing such that width/height includes border and content */
+  font-size: 62.5%; /* setting font-size to 10px */
+  scroll-behavior: smooth;
+}
+
+/* setting some media queries to change font size according to screen size.
+since rem is dependent on document font size, this allows other elements to be scaled too. */
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* styling for base elements */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: white;
+}
+
+h1, h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+ul {
+  list-style: none; /* removes points from list */
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* navbar styling */
+
+/* using flexbox to place links at rightmost of navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  background: var(--color3);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2rem; /* gives some space between links and end of page */
+}
+
+.nav-list a {
+  display: block; /* set display to block to allow setting of padding, margins, etc */
+  font-size: 2.2rem;
+  padding: 2rem; /* padding around link to make it look more box-ish */
+}
+
+/* changes background color of links when hovered over */
+.nav-list a:hover {
+  background: var(--color2);
+}
+
+ /* media query to center navbar for narrow screens (less than 460px) */
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+/* welcome-section styling */
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* ensures welcome-section always equal to height of viewport */
+  background-color: var(--color1);
+}
+
+/* styling for description */
+.welcome-section > p {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--color3);
+}
+
+
+/* projects section styling */
+.projects-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--color2);
+}
+
+.projects-section-header {
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid ;
+}
+
+/* reduce header font size for narrow screens */
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 4rem;
+  }
+}
+
+/* placing project items into a grid to make the tiles*/
+.projects-grid {
+  display: grid;
+  /* auto-fit is used so that new columns are not populated when screen is expanded too far */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto 6 rem auto;
+
+}
+
+/* media query to reduce padding and make tiles smaller for smaller screens (wdith < 490px) */
+@media (max-width: 28.75em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* styling for individual project tile */
+.project-tile {
+  background: var(--color1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px; /* mildly curved borders */
+}
+
+.code {
+  color: var(--color1); /* set colour to same as background to hide it */
+  transition: color 0.3s ease-out; /* fading from edited colour back to hidden color */
+}
+
+.project-tile:hover .code {
+  color: ; /* change "code" text to this color when hovering over tile */
+}
+
+.project-image {
+  height: calc(100% - 6.8rem); /* fill tile minus space for text */
+  width: 100%;
+  object-fit: cover; /* clip image to fit box */
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+  /* height of content = 2rem + 2rem + 2rem = 6rem. Then add 0.8rem for space, hence 6.8rem used in calculation of project image height*/
+}
+
+/* styling for show all button */
+.show-all-button {
+  display: inline-block; /* set display to inline-blokc to allow changing of padding, margin etc */
+  margin-top: 6rem;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  font-size: 2rem;
+  background: var(--color1);
+  transition: background 0.3s ease-out;
+}
+
+/* change background color when hovered over */
+.show-all-button:hover {
+  background: var(--color3);
+}
+
+.show-all-button > span {
+  margin-left: 10px;
+  transition: transform 0.3s ease-out;
+}
+
+/* animate > sign when hovered over */
+.show-all-button:hover > span {
+  transform: translateX(2px);
+}
+
+/* styling for contact-section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  background: var(--color1);
+}
+
+.contact-section-header > h2 {
+  font-size: 6rem;
+}
+
+/* media query to reduce font size of contact section header for smaller devices */
+@media (max-width: 28.75em) {
+  .contact-section-header > h2 {
+    font-size: 4rem;
+  }
+}
+
+.contact-section-header > p {
+  font-style: italic;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-tile {
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  padding: 1.5rem;
+  transition: transform 0.3s ease-out;
+}
+
+.contact-tile:hover {
+  transform: translateY(8px);
+}
