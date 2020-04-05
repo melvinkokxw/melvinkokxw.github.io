@@ -15,28 +15,28 @@
 
 html {
   box-sizing: border-box; /* setting box-sizing such that width/height includes border and content */
-  font-size: 62.5%; /* setting font-size to 10px */
+  font-size: 68%; /* setting font-size to 10px */
   scroll-behavior: smooth;
 }
 
 /* setting some media queries to change font size according to screen size.
 since rem is dependent on document font size, this allows other elements to be scaled too. */
 /* 1200px / 16px = 75em */
-@media (max-width: 75em) {
+@media only screen and (max-width: 75em) {
   html {
     font-size: 60%;
   }
 }
 
 /* 980px / 16px = 61.25em */
-@media (max-width: 61.25em) {
+@media only screen and (max-width: 61.25em) {
   html {
     font-size: 58%;
   }
 }
 
 /* 460px / 16px = 28.75em */
-@media (max-width: 28.75em) {
+@media only screen and (max-width: 28.75em) {
   html {
     font-size: 55%;
   }
@@ -113,8 +113,8 @@ img {
 }
 
  /* media query to center navbar for narrow screens (less than 460px) */
-@media (max-width: 28.75em) {
-  .nav {
+@media (max-width: 460px) {
+  .navbar {
     justify-content: center;
   }
 
@@ -151,7 +151,7 @@ img {
 }
 
 .projects-section-header {
-  max-width: 640px;
+  max-width: 80%;
   margin: 0 auto 6rem auto;
   border-bottom: 0.2rem solid ;
 }
@@ -170,9 +170,7 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 4rem;
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto 6 rem auto;
-
+  margin: 0 auto;
 }
 
 /* media query to reduce padding and make tiles smaller for smaller screens (wdith < 490px) */
@@ -203,20 +201,19 @@ img {
 }
 
 .project-image {
-  height: calc(100% - 6.8rem); /* fill tile minus space for text */
   width: 100%;
   object-fit: cover; /* clip image to fit box */
 }
 
 .project-name {
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 2rem 0.5rem;
-  /* height of content = 2rem + 2rem + 2rem = 6rem. Then add 0.8rem for space, hence 6.8rem used in calculation of project image height*/
+  width: 100%;
 }
 
 /* styling for show all button */
 .show-all-button {
-  display: inline-block; /* set display to inline-blokc to allow changing of padding, margin etc */
+  display: inline-block; /* set display to inline-block to allow changing of padding, margin etc */
   margin-top: 6rem;
   padding: 1rem 2rem;
   border-radius: 2px;
@@ -258,7 +255,7 @@ img {
 }
 
 /* media query to reduce font size of contact section header for smaller devices */
-@media (max-width: 28.75em) {
+@media only screen and (max-width: 28.75em) {
   .contact-section-header > h2 {
     font-size: 4rem;
   }
