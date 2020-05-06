@@ -88,10 +88,6 @@ a:focus {
     margin-right: auto;
 }
 
-.projects {
-    margin-top: 30vh;
-}
-
 @media (min-width: 48em) {
     .sidebar {
         position: fixed;
@@ -107,5 +103,9 @@ a:focus {
     .content {
         padding: 2em 3em 0;
         margin-left: 25%;
+    }
+
+    .projects {
+        margin-top: 30vh;
     }
 }
