@@ -36,7 +36,7 @@ a:focus {
 
 .sidebar-title,
 .sidebar-tagline {
-    margin: 0;
+    margin: 6px;
 }
 
 .sidebar-title {
@@ -86,6 +86,15 @@ a:focus {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.proj-list:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+.introduction-para {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 48em) {
